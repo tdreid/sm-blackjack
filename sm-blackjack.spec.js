@@ -7,4 +7,14 @@ describe('Blackjack', function() {
       assert.equal(new Blackjack().state, 'wagering');
     });
   });
+  describe('initial bank', function() {
+    it('should be zero', function() {
+      assert.equal(new Blackjack().bank, 0);
+    });
+  });
+  describe('initial wager', function() {
+    it('should be zero', function() {
+      assert.equal(new Blackjack().wager, 0);
+    });
+  });
 });
