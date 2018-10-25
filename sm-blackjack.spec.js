@@ -17,4 +17,21 @@ describe('Blackjack', function() {
       assert.equal(new Blackjack().wager, 0);
     });
   });
+  describe('allTransitions method', function() {
+    it('should list all the expected transitions and nothing else', function() {
+      const expectedTransitions = [
+        'init',
+        'player_placed_bet',
+        'dealt',
+        'player_hit',
+        'player_stood',
+        'dealer_finished',
+        'player_quit',
+        'player_continue',
+        'player_withdrew_cash'
+      ];
+
+      assert.deepEqual(new Blackjack().allTransitions(), expectedTransitions);
+    });
+  });
 });
