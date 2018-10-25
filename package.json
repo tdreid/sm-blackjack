@@ -4,7 +4,7 @@
   "description": "Blackjack implemented as a finite state machine",
   "main": "sm-blackjack.js",
   "scripts": {
-    "test": "mocha *.spec.js"
+    "test": "nyc mocha *.spec.js"
   },
   "author": "Trevor Reid <trevor.d.reid@gmail.com> (http://tdreid.github.io)",
   "license": "MIT",
@@ -12,6 +12,7 @@
     "javascript-state-machine": "^3.1.0"
   },
   "devDependencies": {
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0"
   }
 }
