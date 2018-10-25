@@ -19,7 +19,10 @@ const Blackjack = StateMachine.factory({
     { name: 'player_continue', from: 'push', to: 'wagering' },
     { name: 'player_continue', from: 'win', to: 'wagering' },
     { name: 'player_withdrew_cash', from: 'atm', to: 'wagering' }
-  ]
+  ],
+  data: function(bank = 0, wager = 0) {
+    return { bank, wager };
+  }
 });
 
 module.exports = Blackjack;
