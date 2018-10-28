@@ -52,4 +52,24 @@ describe('Blackjack', function() {
       assert.deepEqual(new Blackjack().allStates(), expectedStates);
     });
   });
+  describe('increaseWager method', function() {
+    it('should increase the wager by the specified amount only when wagering', function() {
+      const testGame = new Blackjack(500, 0);
+
+      testGame.increaseWager();
+      testGame.increaseWager(25);
+
+      assert.equal(testGame.wager, 30);
+    });
+  });
+  describe('decreaseWager method', function() {
+    it('should decrease the wager by the specified amount only when wagering', function() {
+      const testGame = new Blackjack(500, 50);
+
+      testGame.decreaseWager();
+      testGame.decreaseWager(25);
+
+      assert.equal(testGame.wager, 20);
+    });
+  });
 });

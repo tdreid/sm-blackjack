@@ -22,6 +22,18 @@ const Blackjack = StateMachine.factory({
   ],
   data: function(bank = 0, wager = 0) {
     return { bank, wager };
+  },
+  methods: {
+    increaseWager: function(n = 5) {
+      if (this.state == 'wagering') {
+        this.wager += n;
+      }
+    },
+    decreaseWager: function(n = 5) {
+      if (this.state == 'wagering') {
+        this.wager -= n;
+      }
+    }
   }
 });
 
